@@ -1,0 +1,15 @@
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\obj\Debug\net8.0\Task6 GPT.GeneratedMSBuildEditorConfig.editorconfig
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\obj\Debug\net8.0\Task6 GPT.AssemblyInfoInputs.cache
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\obj\Debug\net8.0\Task6 GPT.AssemblyInfo.cs
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\obj\Debug\net8.0\Task6 GPT.csproj.CoreCompileInputs.cache
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\obj\Debug\net8.0\Task6 GPT.sourcelink.json
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\bin\Debug\net8.0\Task6 GPT.exe
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\bin\Debug\net8.0\Task6 GPT.deps.json
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\bin\Debug\net8.0\Task6 GPT.runtimeconfig.json
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\bin\Debug\net8.0\Task6 GPT.dll
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\bin\Debug\net8.0\Task6 GPT.pdb
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\obj\Debug\net8.0\Task6 GPT.dll
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\obj\Debug\net8.0\refint\Task6 GPT.dll
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\obj\Debug\net8.0\Task6 GPT.pdb
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\obj\Debug\net8.0\Task6 GPT.genruntimeconfig.cache
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6 GPT\obj\Debug\net8.0\ref\Task6 GPT.dll

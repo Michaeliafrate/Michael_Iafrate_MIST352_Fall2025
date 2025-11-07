@@ -1,0 +1,15 @@
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\bin\Debug\net8.0\Task6.exe
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\bin\Debug\net8.0\Task6.deps.json
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\bin\Debug\net8.0\Task6.runtimeconfig.json
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\bin\Debug\net8.0\Task6.dll
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\bin\Debug\net8.0\Task6.pdb
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\obj\Debug\net8.0\Task6.GeneratedMSBuildEditorConfig.editorconfig
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\obj\Debug\net8.0\Task6.AssemblyInfoInputs.cache
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\obj\Debug\net8.0\Task6.AssemblyInfo.cs
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\obj\Debug\net8.0\Task6.csproj.CoreCompileInputs.cache
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\obj\Debug\net8.0\Task6.sourcelink.json
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\obj\Debug\net8.0\Task6.dll
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\obj\Debug\net8.0\refint\Task6.dll
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\obj\Debug\net8.0\Task6.pdb
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\obj\Debug\net8.0\Task6.genruntimeconfig.cache
+D:\MIST352_Main_Folder\Michael_Iafrate_MIST352_Fall2025\In_Class_Tasks\Task6\obj\Debug\net8.0\ref\Task6.dll

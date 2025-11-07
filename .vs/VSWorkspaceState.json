@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\In_Class_Tasks",
+    "\\In_Class_Tasks\\Task6",
+    "\\In_Class_Tasks\\Task6 GPT"
   ],
-  "SelectedNode": "\\Task5.sln",
+  "SelectedNode": "\\In_Class_Tasks\\Task6\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
