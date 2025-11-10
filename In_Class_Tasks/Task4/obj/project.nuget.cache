@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Ik0f6PBA514=",
+  "dgSpecHash": "snLPeMFU6tE=",
   "success": true,
   "projectFilePath": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task4\\Task4.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iafra\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\8.0.20\\microsoft.dotnet.ilcompiler.8.0.20.nupkg.sha512",
-    "C:\\Users\\iafra\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.20\\microsoft.net.illink.tasks.8.0.20.nupkg.sha512",
+    "C:\\Users\\iafra\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.21\\microsoft.net.illink.tasks.8.0.21.nupkg.sha512",
     "C:\\Users\\iafra\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\8.0.20\\runtime.win-x64.microsoft.dotnet.ilcompiler.8.0.20.nupkg.sha512"
   ],
   "logs": []

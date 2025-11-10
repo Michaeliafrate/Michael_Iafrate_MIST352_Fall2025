@@ -1,280 +1,162 @@
-﻿// ===================================================
-// MIST 352 — Homework #2 (File Edition)
-// Title: BizMini Checkout + FX (File + Methods + Loops + ref)
-// ---------------------------------------------------
-// - Do NOT modify Main(), SmartLoyaltyAdjust(), GetFxRateLocked(), or LoadPricesFromFile().
-// - Complete ONLY the methods labeled "(You code this)".
-// - Do NOT delete or rename any existing method or parameter.
-// - Keep each method you write under ~20 lines if possible.
-// ===================================================
-// Add your info below:
-// Name     : Michael Iafrate
-// Section  : 11:30 AM
-// Date     : 10/26/25
-
+﻿//===================================================
+//mist 352 — in-class activity 5
+//title: tip & tax splitter pro
+//---------------------------------------------------
+//this program totals a restaurant bill, adds tax and tip,
+//and splits the total between a group of people.
+//you will complete 3 methods to make it work.
+//===================================================
 using System;
-using System.IO;
-using System.Linq;
 
-namespace HW2
+namespace TipTaxSplitterPro
 {
     internal class Program
     {
-        // ---------- (do not remove) ----------
-        // \u200B \u200C \u200D \u2060 are zero-width code points.
-        private const string __sigA = "\u200B\u200C\u2060MIST352\u2060-HW2\u2060-A\u2060-9f5e3c\u2060\u200D\u200C\u200B";
-        private const string __sigB = "\u200B\u200C\u2060MIST352\u2060-HW2\u2060-B\u2060-41da72\u2060\u200D\u200C\u200B";
-        // -----------------------------------------------------------------
-
-        // ==============================================
-        // (You do NOT need to code this)
-        // Method: Main
-        // Purpose: Orchestrates program flow
-        // ==============================================
         static void Main(string[] args)
         {
-            Console.WriteLine("=== HW2: BizMini Checkout + FX (File Edition) ===");
+            Console.WriteLine("=== Tip & Tax Splitter Pro ===");
 
-            // 0) Print menu/instructions (YOU code this)
+            // (1) Display program info and instructions
             ShowMenu();
 
-            // 1) Load prices from file (locked)
-            double[] arrPrices = LoadPricesFromFile("prices.txt");
-            Console.WriteLine($"Loaded {arrPrices.Length} items from file.\n");
+            // A fixed order list for testing (no file I/O)
+            double[] arrItems = { 12.50, 9.00, 15.99, 4.25, 7.75, 10.50 };
+            int intCount = arrItems.Length;
 
-            // 2) Compute subtotal (YOU code this)
-            double dblSubtotal = ComputeSubtotal(arrPrices, arrPrices.Length);
-            Console.WriteLine($"[SUBTOTAL_USD] {dblSubtotal:0.00}");
+            // Collect user inputs
+            Console.Write("Tax rate (decimal, e.g., 0.07): ");
+            double tax = double.TryParse(Console.ReadLine(), out double t) && t >= 0 ? t : 0;
 
-            // 2a) Simple analytics (YOU code these two)
-            int intAbove20 = CountItemsAbove(arrPrices, arrPrices.Length);
-            Console.WriteLine($"[COUNT_ABOVE_20] {intAbove20}");
-            double dblMax = MaxPrice(arrPrices, arrPrices.Length);
-            Console.WriteLine($"[MAX_PRICE] {dblMax:0.00}");
+            Console.Write("Tip rate (decimal, e.g., 0.18): ");
+            double tip = double.TryParse(Console.ReadLine(), out double p) && p >= 0 ? p : 0;
 
-            // 3) Locked black-box adjustment (deterministic)
-            Console.Write("Enter Customer ID (any short text): ");
-            string strCustomerId = Console.ReadLine();
-            double dblAdjusted = SmartLoyaltyAdjust(strCustomerId, dblSubtotal);
-            Console.WriteLine($"[ADJUSTED_USD] {dblAdjusted:0.00}");
+            Console.Write("How many people? ");
+            int people = int.TryParse(Console.ReadLine(), out int n) && n > 0 ? n : 1;
 
-            // 4) FX conversion (locked)
-            string strCcy;
-            double dblRate = GetFxRateLocked(out strCcy);
-            double dblConverted = dblAdjusted * dblRate;
-            Console.WriteLine($"[FX] 1 USD = {dblRate:0.####} {strCcy}");
-            Console.WriteLine($"[CONVERTED] {strCcy} {dblConverted:0.00}");
+            // (2) Compute subtotal of all items
+            double subtotal = ComputeSubtotal(arrItems, intCount);
+            Console.WriteLine($"[SUBTOTAL] {subtotal:0.00}");
 
-            // 5) Optional surcharge (YOU code this — uses ref)
-            Console.Write("Enter surcharge percent (decimal, e.g., 0.02 for 2%, 0 for none): ");
-            string strPct = Console.ReadLine();
-            if (!double.TryParse(strPct, out double dblPct) || dblPct < 0) dblPct = 0;
-            ApplySurcharge(ref dblConverted, dblPct);
-            Console.WriteLine($"[AFTER_SURCHARGE] {strCcy} {dblConverted:0.00}");
+            // Add tax
+            double withTax = subtotal * (1 + tax);
+            Console.WriteLine($"[WITH_TAX] {withTax:0.00}");
 
-            // 6) Display final summary (YOU code this)
-            DisplaySummary(dblSubtotal, dblAdjusted, dblConverted);
+            // (3) Apply tip (ref method updates the same variable)
+            ApplyTip(ref withTax, tip);
+            Console.WriteLine($"[WITH_TAX_TIP] {withTax:0.00}");
 
-            Console.WriteLine("=== End of HW2 ===");
-        }
+            // (4) Calculate per-person share (method returns a double)
+            double perHead = PerPerson(withTax, people);
+            Console.WriteLine($"[PER_PERSON] {perHead:0.00}");
 
-        // ==============================================
-        // (You do NOT need to code this)
-        // Method: LoadPricesFromFile
-        // Purpose: Reads a list of prices from a text file
-        //          and returns them as a double array.
-        // Notes: behaves like a black box; students just use it.
-        // ==============================================
-        private static double[] LoadPricesFromFile(string fileName)
-        {
-            try
-            {
-                string[] lines = File.ReadAllLines(fileName);
-                double[] arr = lines
-                    .Select(l => double.TryParse(l, out double x) ? x : 0.0)
-                    .Where(v => v > 0)
-                    .ToArray();
-
-                // faint checksum twist (harder to trace)
-                for (int i = 0; i < arr.Length; i++)
-                    arr[i] = arr[i] * (1.0 + ((i * 0.0037) % 0.015));
-
-                return arr;
-            }
-            catch
-            {
-                Console.WriteLine("Error: Could not read file. Returning empty array.");
-                return new double[0];
-            }
-        }
-
-        // ==============================================
-        // (You do NOT need to code this)
-        // Business black box: loyalty tweak
-        // ==============================================
-        private static double SmartLoyaltyAdjust(string strCustomerId, double dblSubtotal)
-        {
-            unchecked
-            {
-                int h = 17;
-                foreach (char c in (strCustomerId ?? "")) h = h * 31 + c;
-                double wiggle = ((h ^ 0x5F3759DF) & 1023) / 1023.0;
-                wiggle = (wiggle - 0.5) * 0.07;
-                double kink = Math.Sin((dblSubtotal % 97.0) / 97.0 * Math.PI) * 0.004;
-                double res = dblSubtotal * (1.0 + wiggle + kink);
-                return res < 0 ? 0 : res;
-            }
-        }
-
-        // ==============================================
-        // (You do NOT need to code this)
-        // Deterministic FX menu
-        // ==============================================
-        private static double GetFxRateLocked(out string strCcy)
-        {
-            string[] codes = { "EUR", "GBP", "JPY", "CAD", "AUD", "CHF", "MXN", "INR" };
-            double[] rates = { 0.92, 0.78, 150.10, 1.37, 1.53, 0.90, 18.10, 83.20 };
-            Random rng = new Random(352);
-            int[] picks = Enumerable.Range(0, codes.Length).OrderBy(_ => rng.Next()).Take(5).ToArray();
-
-            Console.WriteLine("Pick a currency (1–5):");
-            for (int i = 0; i < picks.Length; i++)
-                Console.WriteLine($"{i + 1}) {codes[picks[i]]}");
-
-            int choice;
-            while (true)
-            {
-                Console.Write("Your choice: ");
-                if (int.TryParse(Console.ReadLine(), out choice) && choice >= 1 && choice <= 5) break;
-                Console.WriteLine("Invalid. Enter 1–5.");
-            }
-
-            int idx = picks[choice - 1];
-            strCcy = codes[idx];
-            return rates[idx];
+            Console.WriteLine("=== Done ===");
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
         }
 
         // ==============================================
         // (You code this)
         // Method: ShowMenu
-        // Purpose: Print 4–6 lines describing what the program does.
-        // Params: none
+        // Purpose:
+        //   Displays short instructions for the user.
+        //   Explain what the program does and what inputs
+        //   the user will provide (tax, tip, people).
+        // Parameters:
+        //   None
+        // Returns:
+        //   Nothing (void)
+        // Notes:
+        //   Just print 3–5 lines. Example topics:
+        //   - Program adds up prices of meals.
+        //   - User enters tax and tip rates as decimals.
+        //   - Program splits the total between people.
         // ==============================================
         static void ShowMenu()
         {
-            // TODO: 4–6 lines: file input (prices.txt), subtotal, loyalty, FX, surcharge, summary
-            static void ShowMenu()
-            {
-                Console.WriteLine("This program reads item prices from a file (prices.txt).");
-                Console.WriteLine("It calculates a subtotal of all valid prices.");
-                Console.WriteLine("Then applies a loyalty adjustment based on customer ID.");
-                Console.WriteLine("Next, it converts the total into a foreign currency.");
-                Console.WriteLine("You may also apply an optional surcharge.");
-                Console.WriteLine("Finally, it displays a summary of all totals.");
-            }
+            Console.WriteLine("This program calculates the total bill including tax and tip,");
+            Console.WriteLine("and splits it among a specified number of people.");
+            Console.WriteLine("You will be prompted to enter the tax rate, tip rate, and number of people.");
+            Console.WriteLine("Let's get started!");
+            Console.WriteLine();
         }
-
         // ==============================================
-        // (You code this)
+        // (You code this) ComputeSubtotal
         // Method: ComputeSubtotal
-        // Purpose: Loop through array and sum first 'count' values > 0
-        // Params: arr (double[]), count (int)
-        // Returns: subtotal (double)
+        // Purpose:
+        //   Calculates the total of all menu item prices.
+        // Parameters:
+        //   arr   - array of double values representing prices
+        //   count - how many items to include from the array
+        // Returns:
+        //   The subtotal as a double.
+        // Implementation Hints:
+        //   - Initialize a double total = 0.
+        //   - Use a for-loop from 0 to count - 1.
+        //   - If arr[i] > 0, add it to total.
+        //   - Return total at the end.
         // ==============================================
         static double ComputeSubtotal(double[] arr, int count)
         {
-            // TODO: for-loop + if (arr[i] > 0) accumulate
-            static double ComputeSubtotal(double[] arr, int count)
+            double total = 0.0;
+            for (int i = 0; i < count; i++)
             {
-                double subtotal = 0.0;
-                for (int i = 0; i < count && i < arr.Length; i++)
+                if (arr[i] > 0)
                 {
-                    if (arr[i] > 0)
-                        subtotal += arr[i];
+                    total += arr[i];
                 }
-                return subtotal;
+            }
+            return total;
+        }
+
+        // ==============================================
+        // (You code this)
+        // Method: ApplyTip
+        // Purpose:
+        //   Updates the total amount by adding a tip percentage.
+        //   Uses a ref parameter to modify the variable directly.
+        // Parameters:
+        //   ref amountWithTax - the running total that already includes tax
+        //   tipRate           - the tip rate as a decimal (e.g., 0.18 for 18%)
+        // Returns:
+        //   Nothing (void)
+        // Implementation Hints:
+        //   - Check if tipRate > 0.
+        //   - Multiply amountWithTax by (1 + tipRate).
+        // ==============================================
+        static void ApplyTip(ref double amountWithTax, double tipRate)
+        {
+            if (tipRate > 0)
+            {
+                amountWithTax *= (1 + tipRate);
             }
         }
 
         // ==============================================
         // (You code this)
-        // Method: ApplySurcharge
-        // Purpose: Update amount via ref parameter if pct > 0
-        // Params: ref amt, pct (double)
+        // Method: PerPerson
+        // Purpose:
+        //   Divides the grand total by number of people to
+        //   calculate each person’s share.
+        // Parameters:
+        //   grandTotal - total after tax and tip
+        //   people     - number of people splitting the bill
+        // Returns:
+        //   Amount per person as a double.
+        // Implementation Hints:
+        //   - Avoid dividing by zero (if people <= 0, treat as 1).
         // ==============================================
-        static void ApplySurcharge(ref double amt, double pct)
+
+        static double PerPerson(double grandTotal, int people)
         {
-            // TODO: if (pct > 0) amt *= (1 + pct);
-            static void ApplySurcharge(ref double amt, double pct)
+            if (people <= 0)
             {
-                if (pct > 0)
-                    amt *= (1 + pct);
+                people = 1;
             }
+
+            // TODO: Return grandTotal / people (handle edge cases).
+            return grandTotal / people;
         }
 
-        // ==============================================
-        // (You code this)
-        // Method: DisplaySummary
-        // Purpose: Print subtotal, adjusted, and final converted totals.
-        // Params: subtotal, adjusted, finalAmt
-        // ==============================================
-        static void DisplaySummary(double subtotal, double adjusted, double finalAmt)
-        {
-            // TODO: clean 3–5 lines of labeled output
-            static void DisplaySummary(double subtotal, double adjusted, double finalAmt)
-            {
-                Console.WriteLine("\n=== Final Summary ===");
-                Console.WriteLine($"Subtotal (USD): {subtotal:0.00}");
-                Console.WriteLine($"Adjusted (USD): {adjusted:0.00}");
-                Console.WriteLine($"Final Converted Amount: {finalAmt:0.00}");
-                Console.WriteLine("=====================");
-            }
-        }
 
-        // ==============================================
-        // (You code this)
-        // Method: CountItemsAbove
-        // Purpose: Count how many of the first 'count' items are > $20.00
-        // Params: arr (double[]), count (int)
-        // Returns: number of items strictly greater than 20.00
-        // ==============================================
-        static int CountItemsAbove(double[] arr, int count)
-        {
-            // TODO: for-loop + if (arr[i] > 20.0) ++counter
-            static int CountItemsAbove(double[] arr, int count)
-            {
-                int counter = 0;
-                for (int i = 0; i < count && i < arr.Length; i++)
-                {
-                    if (arr[i] > 20.0)
-                        counter++;
-                }
-                return counter;
-            }
-
-        }
-
-        // ==============================================
-        // (You code this)
-        // Method: MaxPrice
-        // Purpose: Return the maximum value among the first 'count' items (> 0 only).
-        // Params: arr (double[]), count (int)
-        // Returns: max price (0 if none)
-        // ==============================================
-        static double MaxPrice(double[] arr, int count)
-        {
-            // TODO: track max; if (arr[i] > 0 && arr[i] > max) max = arr[i];
-            static double MaxPrice(double[] arr, int count)
-            {
-                double max = 0.0;
-                for (int i = 0; i < count && i < arr.Length; i++)
-                {
-                    if (arr[i] > 0 && arr[i] > max)
-                        max = arr[i];
-                }
-                return max;
-            }
-
-        // (Optional) You may add tiny helper methods BELOW THIS LINE however, they shoould NOT be part of the solution. 
     }
 }
