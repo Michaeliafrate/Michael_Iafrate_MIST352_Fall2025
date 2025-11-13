@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7D8D3D-EBCC-42CA-93AF-F424A82A9A2F}|Task7.csproj|d:\\mist352_main_folder\\michael_iafrate_mist352_fall2025\\in_class_tasks\\task7\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7D8D3D-EBCC-42CA-93AF-F424A82A9A2F}|Task7.csproj|solutionrelative:customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7D8D3D-EBCC-42CA-93AF-F424A82A9A2F}|Task7.csproj|d:\\mist352_main_folder\\michael_iafrate_mist352_fall2025\\in_class_tasks\\task7\\bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7D8D3D-EBCC-42CA-93AF-F424A82A9A2F}|Task7.csproj|solutionrelative:bank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7D8D3D-EBCC-42CA-93AF-F424A82A9A2F}|Task7.csproj|d:\\mist352_main_folder\\michael_iafrate_mist352_fall2025\\in_class_tasks\\task7\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7D8D3D-EBCC-42CA-93AF-F424A82A9A2F}|Task7.csproj|solutionrelative:account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7D8D3D-EBCC-42CA-93AF-F424A82A9A2F}|Task7.csproj|d:\\mist352_main_folder\\michael_iafrate_mist352_fall2025\\in_class_tasks\\task7\\teller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7D8D3D-EBCC-42CA-93AF-F424A82A9A2F}|Task7.csproj|solutionrelative:teller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC7D8D3D-EBCC-42CA-93AF-F424A82A9A2F}|Task7.csproj|d:\\mist352_main_folder\\michael_iafrate_mist352_fall2025\\in_class_tasks\\task7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC7D8D3D-EBCC-42CA-93AF-F424A82A9A2F}|Task7.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\Customer.cs",
+              "RelativeDocumentMoniker": "Customer.cs",
+              "ToolTip": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\Customer.cs",
+              "RelativeToolTip": "Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T16:54:57.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T16:37:55.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Teller.cs",
+              "DocumentMoniker": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\Teller.cs",
+              "RelativeDocumentMoniker": "Teller.cs",
+              "ToolTip": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\Teller.cs",
+              "RelativeToolTip": "Teller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T17:24:18.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Account.cs",
+              "DocumentMoniker": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\Account.cs",
+              "RelativeDocumentMoniker": "Account.cs",
+              "ToolTip": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\Account.cs",
+              "RelativeToolTip": "Account.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T16:56:12.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Bank.cs",
+              "DocumentMoniker": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\Bank.cs",
+              "RelativeDocumentMoniker": "Bank.cs",
+              "ToolTip": "D:\\MIST352_Main_Folder\\Michael_Iafrate_MIST352_Fall2025\\In_Class_Tasks\\Task7\\Bank.cs",
+              "RelativeToolTip": "Bank.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAADwv3kAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T17:21:08.452Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

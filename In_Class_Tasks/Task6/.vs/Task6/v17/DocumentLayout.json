@@ -39,8 +39,7 @@
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwA0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-07T21:32:47.317Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -73,8 +72,7 @@
               "RelativeToolTip": "Account.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T21:10:12.164Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T21:10:12.164Z"
             },
             {
               "$type": "Document",
@@ -86,8 +84,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-04T18:17:18.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-04T18:17:18.163Z"
             }
           ]
         }
