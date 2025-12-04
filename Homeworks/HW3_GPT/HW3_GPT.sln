@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36717.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW3_GPT", "HW3_GPT.csproj", "{E026F5F0-AD00-47CE-952B-52EB416F7173}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E026F5F0-AD00-47CE-952B-52EB416F7173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E026F5F0-AD00-47CE-952B-52EB416F7173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E026F5F0-AD00-47CE-952B-52EB416F7173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E026F5F0-AD00-47CE-952B-52EB416F7173}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {125E3886-56EB-4801-AB12-F88B4AA50874}
+	EndGlobalSection
+EndGlobal

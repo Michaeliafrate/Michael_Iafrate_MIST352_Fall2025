@@ -32,15 +32,15 @@ namespace Task6
             Console.WriteLine("===============================================================");
 
             // Accounts
-            Account a1 = new Account();
-            Account a2 = new Account(1001, "Sarah");
-            Account a3 = new Account(1002, "Mike", 29000);
+            Account account1 = new Account();
+            Account account2 = new Account(1001, "Sarah");
+            Account account3 = new Account(1002, "Mike", 29000);
 
-            a1.DisplayInfo();
-            a2.Deposit(4000);
-            a2.DisplayInfo();
-            a3.Withdraw(1200);
-            a3.DisplayInfo();
+            account1.DisplayInfo();
+            account2.Deposit(4000);
+            account2.DisplayInfo();
+            account3.Withdraw(1200);
+            account3.DisplayInfo();
 
             Console.WriteLine("===============================================================");
 
